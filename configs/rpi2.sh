@@ -139,7 +139,7 @@ option UsrPorts /usr/ports
 # Copies the src tree that was used to build this image to /usr/src
 # on the image.
 #
-#option UsrSrc
+option UsrSrc
 
 # Partition the system in a way similar to NanoBSD.
 # The arguments and default values are:
@@ -230,7 +230,7 @@ WORKDIR=${TOPDIR}/work/rpi2
 
 # For example, I find each of the following quite useful at times:
 #
-FREEBSD_EXTRA_ARGS="-DNO_CLEAN -sj8"
+FREEBSD_EXTRA_ARGS="-sj8"
 FREEBSD_KERNEL_EXTRA_ARGS="-sj8"
 
 
