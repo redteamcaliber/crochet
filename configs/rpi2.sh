@@ -51,7 +51,7 @@ board_setup RaspberryPi2
 #option ImageSize 100mb # for kernel-only images
 #option ImageSize 1950mb # for 2 Gigabyte card
 #option ImageSize 3900mb # for 4 Gigabyte card
-option ImageSize 4gb
+option ImageSize 6gb
 
 #
 # How to Customize Your Build
