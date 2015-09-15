@@ -21,7 +21,9 @@
 # about configuring for your particular board.
 #
 #board_setup Alix
+#board_setup BananaPi
 #board_setup BeagleBone
+#board_setup CubieBoard2
 #board_setup Chromebook
 #board_setup GenericI386
 #board_setup PandaBoard
@@ -29,6 +31,7 @@
 #board_setup RadxaRockLite
 #board_setup Soekris
 #board_setup RaspberryPi
+#board_setup RaspberryPi2
 #board_setup VersatilePB
 #board_setup ZedBoard
 #board_setup Wandboard
@@ -117,10 +120,10 @@
 # The size argument is required.  There are two optional arguments:
 #   deferred - swap file will be created on first boot; this
 #          works well in conjunction with Growfs above
-#   file=/usr/swap0 - Set the filename of the swap file.  The default
-#          name is /usr/swap0.
+#   file=/swapfile0 - Set the filename of the swap file.  The default
+#          name is /swapfile0.
 #
-#option SwapFile <size> [deferred] [file=/usr/swap0]
+#option SwapFile <size> [deferred] [file=/swapfile0]
 
 # Uses "portsnap" to download an up-to-date ports tree and
 # install it on the image.
@@ -152,6 +155,9 @@
 #
 #option NanoBSD '/dev/sd0' 1g
 #option NanoBSD /dev/mmcsd0 1g 2 16m
+
+# Enable NTP daemon
+#option Ntpd
 
 # Each board picks a default KERNCONF but you can override it.
 #
@@ -220,6 +226,11 @@
 # You can specify options used for all four of the above:
 #
 #FREEBSD_EXTRA_ARGS=""
+
+# Build jobs.  The number of make jobs to run in parallel.
+# Defaults to: $(sysctl -n hw.ncpu)
+#WORLDJOBS="4"
+#KERNJOBS="4"
 
 # You can specify a custom src.conf or make.conf; the defaults are:
 #
